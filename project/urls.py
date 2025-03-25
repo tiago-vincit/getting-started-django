@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.conf.urls import include, url
+from django.urls import include, path  # or re_path if you need regex support
 from django.contrib import admin
 
 import helloworld.views
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', helloworld.views.index),
-    url(r'^_ah/health$', helloworld.views.healthcheck),
+    path(r'admin/', admin.site.urls),
+    path(r'', helloworld.views.index),
+    path(r'health/', helloworld.views.healthcheck),
 ]
