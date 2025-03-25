@@ -18,7 +18,7 @@ from django.contrib import admin
 import helloworld.views
 
 urlpatterns = [
-    path(r'admin/', admin.site.urls),
-    path(r'', helloworld.views.index),
-    path(r'health/', helloworld.views.healthcheck),
+    path('admin/', admin.site.urls),
+    path('', helloworld.views.index),
+    path('health/', helloworld.views.healthcheck),
 ]
